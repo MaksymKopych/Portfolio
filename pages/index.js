@@ -29,29 +29,45 @@ export default function Home() {
                 className={styles.socialLink}
                 href="https://www.linkedin.com/in/maksym-kopych-4824a9237/"
               >
-                <img src="linkedin.svg" alt="linkedin" />
+                <img
+                  src="https://maksymkopych.github.io/Portfolio/linkedin.svg"
+                  alt="linkedin"
+                />
               </a>
               <a
                 className={styles.socialLink}
                 href="https://github.com/MaksymKopych"
               >
-                <img src="github.svg" alt="linkedin" />
+                <img
+                  src="https://maksymkopych.github.io/Portfolio/github.svg"
+                  alt="linkedin"
+                />
               </a>
               <a
                 className={styles.socialLink}
                 href="https://www.facebook.com/maksymkopych"
               >
-                <img src="facebook.svg" alt="linkedin" />
+                <img
+                  src="https://maksymkopych.github.io/Portfolio/facebook.svg"
+                  alt="linkedin"
+                />
               </a>
               <a
                 className={styles.socialLink}
                 href="https://www.instagram.com/maximkopych/"
               >
-                <img src="instagram.svg" alt="linkedin" />
+                <img
+                  src="https://maksymkopych.github.io/Portfolio/instagram.svg"
+                  alt="linkedin"
+                />
               </a>
             </div>
             <div className="btn-box">
-              <a href="MaksymKopych_FrontEndDev.pdf" download className="btn">
+              <a
+                href="https://maksymkopych.github.io/Portfolio/MaksymKopych_FrontEndDev.pdf"
+                download
+                className="btn"
+              >
                 Download CV
               </a>
             </div>
@@ -59,9 +75,16 @@ export default function Home() {
         </div>
         <div className={`span-6 span-md-12 `}>
           <div className={`${styles.imageBox}`}>
-            <img src="hexagon.svg" alt="main" className={styles.hexagon} />
+            <img
+              src="https://maksymkopych.github.io/Portfolio/hexagon.svg"
+              alt="main"
+              className={styles.hexagon}
+            />
             <div className={styles.image}>
-              <img src="Photo.png" alt="main" />
+              <img
+                src="https://maksymkopych.github.io/Portfolio/Photo.png"
+                alt="main"
+              />
             </div>
           </div>
         </div>
