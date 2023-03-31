@@ -51,7 +51,11 @@ export default function Home() {
               </a>
             </div>
             <div className="btn-box">
-              <a href="Maksym_Kopych_FrontEndDev.pdf" download className="btn">
+              <a
+                href="/public/MaksymKopych_FrontEndDev.pdf"
+                download
+                className="btn"
+              >
                 Download CV
               </a>
             </div>
@@ -59,9 +63,9 @@ export default function Home() {
         </div>
         <div className={`span-6 span-md-12 `}>
           <div className={`${styles.imageBox}`}>
-            <img src="/hexagon.svg" alt="main" className={styles.hexagon} />
+            <img src="hexagon.svg" alt="main" className={styles.hexagon} />
             <div className={styles.image}>
-              <img src="/Photo.png" alt="main" />
+              <img src="Photo.png" alt="main" />
             </div>
           </div>
         </div>
