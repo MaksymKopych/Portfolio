@@ -1,0 +1,73 @@
+@import "./Variables.scss";
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid .no-pad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@for $i from 1 to 14 {
+    .start-#{$i} {
+        grid-column-start: $i;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .end-#{$i} {
+        grid-column-end: $i;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .span-#{$i} {
+        grid-column-start: span $i;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@for $i from 1 to 14 {
+    @media (max-width: $tablet) {
+        .start-md-#{$i} {
+            grid-column-start: $i;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .end-md-#{$i} {
+            grid-column-end: $i;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .span-md-#{$i} {
+            grid-column-start: span $i;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        .start-sm-#{$i} {
+            grid-column-start: $i;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .end-sm-#{$i} {
+            grid-column-end: $i;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .span-sm-#{$i} {
+            grid-column-start: span $i;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

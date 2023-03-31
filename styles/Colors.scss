@@ -1,0 +1,45 @@
+:root {
+    --color-white: #ffffff;
+    --color-background: #F8F6F3;
+    --color-button-main: #4B33EB;
+    --color-button-critical: #E31280;
+    --color-button-observation: #80BB0E;
+    --color-buttin-repair: #F09292;
+    --color-primary: #2C2A29;
+    --color-grey: #5C656B;
+    --color-background-switsh: #ffffff;
+    --color-scroll: #ffffff;
+    --color-scrollbar: #D7D9DA;
+    --color-line: #AFB4B6;
+    --color-button-secondary: #4B33EB;
+    --color-checkbox-done: #4B33EB;
+    --color-like: #92DD00;
+    --color-dislike: #B30000;
+    --color-controler: #5C656B;
+    --filter: invert(0);
+    --filter-invert: hue-rotate(180deg);
+    --color-legend: #000000;
+    --color-text-legend: #ffffff;
+    --color-focus: #DCEBCC;
+}
+
+[data-theme='dark'] {
+    --color-background: #0C091B;
+    --color-button-main: #4B33EB;
+    --color-button-critical: #E31280;
+    --color-button-observation: #80BB0E;
+    --color-buttin-repair: #F09292;
+    --color-primary: #ffffff;
+    --color-grey: #5C656B;
+    --color-background-switsh: #271D5A;
+    --color-scroll: #3D346E;
+    --color-scrollbar: #271D5A;
+    --color-line: #3D346E;
+    --color-button-secondary: #FFFFFF;
+    --color-checkbox-done: #A89BFF;
+    --color-controler: #AFB4B6;
+    --filter: invert(1);
+    --color-legend: #FFC200;
+    --color-text-legend: #000000;
+    --color-focus: #170E44;
+}
