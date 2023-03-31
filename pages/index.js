@@ -51,13 +51,9 @@ export default function Home() {
               </a>
             </div>
             <div className="btn-box">
-              <Link
-                href="Maksym_Kopych_juniorFrontEnd.pdf"
-                download
-                className="btn"
-              >
+              <a href="Maksym_Kopych_FrontEndDev.pdf" download className="btn">
                 Download CV
-              </Link>
+              </a>
             </div>
           </div>
         </div>
