@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
-
-module.exports = nextConfig
+};
+const basePath = "/Portfolio";
+module.exports = {
+  basePath,
+};
+module.exports = nextConfig;
