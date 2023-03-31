@@ -36,7 +36,7 @@ export default function Header({ }: Props) {
     return (
         <header className={`container ${style.header}`}>
             <div className={style.logo}>
-                <a className={style.logo__link} href="/">Portfolio</a>
+                <Link className={style.logo__link} href="/">Portfolio</Link>
             </div>
             <nav className={`${style.nav}`}>
                 <ul className={style.nav__list}>
