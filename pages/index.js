@@ -51,11 +51,7 @@ export default function Home() {
               </a>
             </div>
             <div className="btn-box">
-              <a
-                href="/public/MaksymKopych_FrontEndDev.pdf"
-                download
-                className="btn"
-              >
+              <a href="MaksymKopych_FrontEndDev.pdf" download className="btn">
                 Download CV
               </a>
             </div>

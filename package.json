@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,5 +20,4 @@
     "sass": "^1.60.0",
     "scss": "^0.2.4"
   }
-  
 }
