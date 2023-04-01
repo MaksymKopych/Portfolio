@@ -2,13 +2,14 @@
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
     background-color: rgba(35, 39, 50, 0.783);
     z-index: 999;
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
     gap: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 
     @media (max-width:992px) {
         background-color: rgb(35, 39, 50);

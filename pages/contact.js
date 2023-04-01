@@ -3,31 +3,40 @@ import styles from "./Contact.module.scss";
 import { useForm } from "react-hook-form";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { sendContactForm } from "../lib/api";
 const Contact = () => {
   const [phone, setPhone] = useState(null);
+  const [isSended, setIsSended] = useState(false);
+  const [sendErr, setSendErr] = useState(null);
+  const [succes, setSucces] = useState(null);
+
+  const showAlert = () => {
+    setIsSended(true);
+    setTimeout(() => {
+      setIsSended(false);
+    }, 2000);
+  };
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (data, e) => {
-    e.preventDefault();
+  const onSubmit = async (data) => {
     data.phone = phone;
-
     try {
-      const res = await fetch("./api/script.php", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
-
-      const message = await res.json();
-    } catch (errors) {
-      console.log(errors);
+      const res = await sendContactForm(data);
+      showAlert();
+      setSucces(res.message);
+    } catch (error) {
+      showAlert();
+      setSendErr(error.message);
     }
   };
   return (
     <div className={`container section ${styles.contact}`}>
+      {isSended && sendErr && <p className="alert error">{sendErr}</p>}
+      {isSended && !sendErr && <p className="alert success"> {succes}</p>}
       <h1 className={styles.header}>
         Interested ? <span>Contact Me :)</span>
       </h1>

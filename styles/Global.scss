@@ -83,3 +83,32 @@ body {
 .shadow {
     filter: drop-shadow(rgb(0, 255, 255) 0px 0px 50px)
 }
+
+.alert {
+    position: fixed;
+    top: 20px;
+    z-index: 99999;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    @media (max-width:992px) {
+        width: 80%;
+        top: 90px;
+    }
+}
+
+.success {
+    background-color: rgb(171, 228, 184);
+}
+
+.error {
+    color: wheat;
+    background-color: rgba(255, 38, 38, 0.7);
+}
