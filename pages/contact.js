@@ -3,7 +3,7 @@ import styles from "./Contact.module.scss";
 import { useForm } from "react-hook-form";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import { sendContactForm } from "../lib/api";
+import { sendContactForm } from "./lib/api.js";
 const Contact = () => {
   const [phone, setPhone] = useState(null);
   const [isSended, setIsSended] = useState(false);
