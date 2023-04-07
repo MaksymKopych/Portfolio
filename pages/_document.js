@@ -11,6 +11,7 @@ const document = () => {
           to contribute additional success to your organisation."
           id="description"
         ></meta>
+        <meta name="twitter:card" content="summary_large_image" />
         <meta content="/meta.jpeg" property="og:image" name="og:image"></meta>
         <meta
           name="og:image"
@@ -18,6 +19,9 @@ const document = () => {
           content="/meta.jpeg"
           property="og:image"
         ></meta>
+        <meta name="twitter:image" content="/meta.jpeg" />
+        <meta name="twitter:image:src" content="/meta.jpeg" />
+        <meta property="og:site_name" content="Maksym Kopych: Portfolio" />
       </Head>
       <body>
         <Main />
