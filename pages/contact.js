@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Contact.module.scss";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { sendContactForm } from "../lib/api";
@@ -21,11 +21,18 @@ const Contact = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm();
+  const resetForm = () => {
+    reset(), setPhone(null);
+  };
   const onSubmit = async (data) => {
     data.phone = phone;
     try {
       const res = await sendContactForm(data);
+      if (res.message === "Email sent successfully") {
+        resetForm();
+      }
       showAlert();
       setSucces(res.message);
     } catch (error) {
