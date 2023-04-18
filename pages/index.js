@@ -54,7 +54,7 @@ export default function Home() {
               </a>
               <a
                 className={styles.socialLink}
-                href="https://www.instagram.com/maximkopych/"
+                href="https://www.instagram.com/maksym_kopych/"
               >
                 <img
                   src="https://maksymkopych.github.io/Portfolio/instagram.svg"
