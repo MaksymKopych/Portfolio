@@ -27,7 +27,7 @@ export default function Home() {
             <div className={styles.socialBox}>
               <a
                 className={styles.socialLink}
-                href="https://www.linkedin.com/in/maksym-kopych-4824a9237/"
+                href="https://www.linkedin.com/in/maksymkopych/"
               >
                 <img
                   src="https://maksymkopych.github.io/Portfolio/linkedin.svg"
