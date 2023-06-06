@@ -33,5 +33,12 @@
         "description": "",
         "thumb": "Projects/Project_5.jpg",
         "link": "https://fablabwarszawa.pl/rozwin-swoj-projekt"
+    },
+    {
+        "id": 5,
+        "name": "Fundacja Orange",
+        "description": "",
+        "thumb": "Projects/Project_6.jpg",
+        "link": "https://fundacja.orange.pl/nasze-programy/orange-digital-center"
     }
 ]

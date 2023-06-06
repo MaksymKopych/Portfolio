@@ -101,9 +101,7 @@ export default function Header({ }: Props) {
                 </div>
                 <div className={style.nav__list}>
                     <Link className={`${style.nav__link} ${router.pathname === "/" && style.active}`} onClick={() => setShowMenu(false)} href="/">Home</Link>
-                    {/* <li >
-                        <Link className={`${style.nav__link} ${router.pathname === "/about" && style.active}`} href="/about">About</Link>
-                    </li> */}
+                    {/* <Link className={`${style.nav__link} ${router.pathname === "/about" && style.active}`} onClick={() => setShowMenu(false)} href="/about">About</Link> */}
                     <Link className={`${style.nav__link} ${router.pathname === "/portfolio" && style.active}`} onClick={() => setShowMenu(false)} href="/portfolio">Portfolio</Link>
                     <Link className={`${style.nav__link} ${router.pathname === "/contact" && style.active}`} onClick={() => setShowMenu(false)} href="/contact">Contact</Link>
                     {/* <li className={style.nav__languages} >

@@ -16,12 +16,14 @@ export default function Home() {
                 <h3 className={styles.animate}>Front-End Developer</h3>
               </div>
               <p>
-                I recently arrived to Canada from Ukraine. I am a hard worker,
-                quick learner and adaptable to fast-paced environments. I have
-                2+ years of experience working in a Polish tech company. As a
-                result, I believe I would be an excellent addition to your team
-                and would strive to provide my greatest skills and best effort
-                to contribute additional success to your organisation.
+                I have a wide range of front-end development skills, including
+                experience with JavaScript/TypeScript, React, and Next.js. My
+                strong technical skills are complemented by excellent customer
+                support capabilities.<br></br>
+                <br></br>As a result, I believe I would be an excellent addition
+                to your team and would strive to provide my greatest skills and
+                best effort to contribute additional success to your
+                organisation.
               </p>
             </div>
             <div className={styles.socialBox}>

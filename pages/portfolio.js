@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./Portfolio.module.scss";
 const data = require("../utils/data.json");
 const Portfolio = () => {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  console.log(data);
   return (
     <div className={`container section ${styles.portfolio}`}>
       <h1 className={styles.header}>
