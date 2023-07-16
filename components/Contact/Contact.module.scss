@@ -1,0 +1,133 @@
+.contactInfo {
+    color: #abadb1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.contactTitle {
+    color: white;
+}
+
+.contactLinks {
+    color: #abadb1;
+
+    a {
+        color: #ffffff;
+    }
+}
+
+.contactSocial {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.socilaTitle {
+    color: #abadb1;
+    text-transform: uppercase;
+}
+
+.socialBox {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset -5px -5px 5px rgba(126, 116, 116, 0.3), inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.socialLink {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3), 5px 5px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+
+    &::before {
+        border-radius: 15px;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        position: absolute;
+        height: 95%;
+        width: 95%;
+        box-shadow: inset -5px -5px 5px rgba(197, 186, 186, 0.3), inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.imageBox {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+
+    @media (max-width:992px) {
+        width: 100%;
+    }
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.6rem;
+    color: white;
+    background: none;
+    border-radius: 15px;
+    border: none;
+    resize: none;
+    box-shadow: inset -5px -5px 5px rgba(126, 116, 116, 0.3), inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+}
+
+.input {
+
+    position: relative;
+    width: 49%;
+    margin-bottom: 30px;
+
+    @media (max-width:699px) {
+        width: 100%;
+    }
+
+}
+
+.textarea {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.inputBox {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width:699px) {
+        flex-direction: column;
+    }
+}
