@@ -39,11 +39,15 @@ export default function Header({ }: Props) {
             <nav className={`${style.nav}`}>
                 <ul className={style.nav__list}>
                     <li >
-                        <Link className={`${style.nav__link} ${router.pathname === "/" && style.active}`} href="/">Home</Link>
+                        <Link className={`${style.nav__link}`} href="/">Home</Link>
                     </li>
 
                     <li >
-                        <Link className={`${style.nav__link} ${router.pathname === "/portfolio" && style.active}`} href="#portfolio">Portfolio</Link>
+                        <Link className={`${style.nav__link} `} href="#portfolio">Portfolio</Link>
+                    </li>
+
+                    <li >
+                        <Link className={`${style.nav__link}`} href="#skills">Skills</Link>
                     </li>
                     <li >
                         <a className={`btn`} href="#contact">Contact</a>
@@ -98,6 +102,7 @@ export default function Header({ }: Props) {
                 <div className={style.mobile__list}>
                     <Link className={` ${style.mobile__link}`} onClick={() => setShowMenu(false)} href="/">Home</Link>
                     <Link className={` ${style.mobile__link} `} onClick={() => setShowMenu(false)} href="#portfolio">Portfolio</Link>
+                    <Link className={` ${style.mobile__link} `} onClick={() => setShowMenu(false)} href="#skills">Skills</Link>
                     <Link className={`${style.mobile__link}`} onClick={() => setShowMenu(false)} href="#contact">Contact</Link>
 
                 </div>
