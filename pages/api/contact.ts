@@ -18,7 +18,7 @@ const generateEmailContent = (data) => {
   const emailTemplate = (body: any) => {
     return `
       <div style="font-family: Arial, sans-serif; background-color: #f0f0f0;">
-        <table style="width: 100%; margin: 0 auto; background-color: #ffffff; border-collapse: collapse; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <table style="width: 100%; margin: 0 auto; background-color: #ffffff; border-collapse: collapse; border: 2px solid #333333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
           <tr>
             <td style="padding: 20px;">
             <h2 style="color: #333333; margin-bottom: 20px;">New Contact Message</h2>
@@ -32,7 +32,7 @@ const generateEmailContent = (data) => {
             </td>
           </tr>
           <tr>
-            <td style="background-color: #333333; padding: 20px; text-align: center; border-radius: 0 0 5px 5px;">
+            <td style="background-color: #333333; padding: 20px; text-align: center;">
               <p style="color: #ffffff; margin: 0;">Best regards,</p>
               <p style="color: #ffffff; margin: 0;">Maksym Kopych</p>
             </td>
