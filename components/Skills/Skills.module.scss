@@ -1,4 +1,8 @@
-.scillsBox {}
+.scillsBox {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 40px;
+}
 
 .skills {
     display: grid;
@@ -8,8 +12,11 @@
     justify-content: center;
     align-items: center;
     transition: 1s;
-    margin: 0 auto;
-    margin-bottom: 30px;
+}
+
+.allSkills {
+    display: flex;
+    flex: 1;
 }
 
 .each {
@@ -117,6 +124,14 @@
     .center {
         width: 300px;
         height: 300px;
+    }
+
+    .scillsBox {
+        flex-direction: column;
+    }
+
+    .skills {
+        margin: 0 auto;
     }
 }
 

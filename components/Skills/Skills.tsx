@@ -29,9 +29,9 @@ const Skills = (props: Props) => {
     ]
     return (
         <div className={`mb-4`} id="skills">
-            <p class="section-title">Main <span>Skills</span></p>
-            <div className={`${styles.scillsBox} grid`}>
-                <div className={`${styles.skills} span-6 span-md-12`}>
+            <p className="section-title">Main <span>Skills</span></p>
+            <div className={`${styles.scillsBox} container noPad`}>
+                <div className={`${styles.skills} `}>
                     <div className={`${styles.each}`}>
                         <div className={`${styles.box}  ${styles.next} `}>
                             <h2>NEXT.JS</h2>
@@ -65,7 +65,7 @@ const Skills = (props: Props) => {
                     </div>
                 </div>
 
-                <div className={`span-6 span-md-12 ${styles.allSkills}`}>
+                <div className={`${styles.allSkills}`}>
                     <div className={styles.centerSkills}>
                         <section className={styles.skillsChart} >
                             {skills.map(s => {
@@ -73,7 +73,7 @@ const Skills = (props: Props) => {
                                     <h3 className={`skill__type`}
 
                                     >{s.name}</h3>
-                                    <div class={`skill__outerBar`}>
+                                    <div className={`skill__outerBar`}>
                                         <div className={`skill__innerBar skill__innerBar--${s.range}`}></div>
                                     </div>
                                 </div>

@@ -37,10 +37,7 @@ body {
 }
 
 .box-shadow {
-
     box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.3), 5px 5px 5px rgba(0, 0, 0, 0.3);
-
-
 }
 
 .box-shadow-md {
@@ -146,6 +143,9 @@ body {
     color: var(--color-button);
 }
 
+.noPad {
+    padding: 0;
+}
 
 .btn {
     background: none;
