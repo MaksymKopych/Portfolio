@@ -3,7 +3,7 @@ import styles from "./Portfolio.module.scss";
 const data = require("../../utils/data.json");
 const Portfolio = () => {
     return (
-        <div className={`${styles.portfolio}`} id="portfolio">
+        <div className={`${styles.portfolio} container`} id="portfolio">
             <p className="section-title">
                 Latest <span>Projects</span>
             </p>

@@ -42,13 +42,17 @@ const Contact = () => {
         }
     };
     return (
-        <div id="contact" className="mb-4">
+        <div id="contact" className="mb-4 container">
             {isSended && sendErr && <p className="alert error">{sendErr}</p>}
             {isSended && !sendErr && <p className="alert success"> {succes}</p>}
             <p className={`section-title`}>
                 Interested ? <span>Contact Me :)</span>
             </p>
-            <div className="grid">
+            <div className="grid"
+                style={{
+                    gap: "40px"
+                }}
+            >
                 <div className="span-4 span-md-12 box-shadow box-shadow-md br-15 p-20">
                     <div className={`thumb ${styles.imageBox} shadow-before box-shadow-md`}>
                         <div className="thumb__container ">
@@ -82,7 +86,7 @@ const Contact = () => {
                             >
                                 <img
                                     src="/github.svg"
-                                    alt="linkedin"
+                                    alt="github"
                                 />
                             </a>
                             <a
@@ -91,7 +95,7 @@ const Contact = () => {
                             >
                                 <img
                                     src="/facebook.svg"
-                                    alt="linkedin"
+                                    alt="facebook"
                                 />
                             </a>
                             <a
@@ -100,7 +104,7 @@ const Contact = () => {
                             >
                                 <img
                                     src="/instagram.svg"
-                                    alt="linkedin"
+                                    alt="instagram"
                                 />
                             </a>
                         </div>

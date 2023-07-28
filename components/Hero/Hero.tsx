@@ -4,8 +4,8 @@ type Props = {}
 
 const Hero = (props: Props) => {
     return (
-        <div className={`${styles.main} mb-4`}>
-            <div className="grid">
+        <div className={`${styles.main} mb-4 `}>
+            <div className="grid container">
                 <div className={`span-6 span-md-12 ${styles.order}`}>
                     <div className={styles.content}>
                         <div>

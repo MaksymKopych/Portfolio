@@ -28,7 +28,7 @@ const Skills = (props: Props) => {
     },
     ]
     return (
-        <div className={`mb-4`} id="skills">
+        <div className={`mb-4 container`} id="skills">
             <p className="section-title">Main <span>Skills</span></p>
             <div className={`${styles.scillsBox} container noPad`}>
                 <div className={`${styles.skills} `}>
