@@ -5,6 +5,7 @@
     align-items: center;
     margin-top: 170px;
     height: calc(100vh - 95px);
+    justify-content: center;
 
     @media (max-width:992px) {
         height: auto;

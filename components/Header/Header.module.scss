@@ -4,16 +4,19 @@
     top: 0;
     left: 0;
     z-index: 999;
-    display: flex;
-    justify-content: space-between;
     padding: 20px 40px;
-    gap: 20px;
     background: var(--color-background);
-
 
     @media (max-width:992px) {
         background-color: rgb(35, 39, 50);
     }
+}
+
+.headerBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .logo__link {

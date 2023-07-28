@@ -34,25 +34,26 @@ export default function Header({ }: Props) {
     };
     const [showMenu, setShowMenu] = useState(false)
     return (
-        <header className={`container ${style.header}`}>
-            <Link className={style.logo__link} href="/">Kopych</Link>
-            <nav className={`${style.nav}`}>
-                <ul className={style.nav__list}>
-                    <li >
-                        <Link className={`${style.nav__link}`} href="/">Home</Link>
-                    </li>
+        <header className={`${style.header}`}>
+            <div className={`container ${style.headerBox}`}>
+                <Link className={style.logo__link} href="/">Kopych</Link>
+                <nav className={`${style.nav}`}>
+                    <ul className={style.nav__list}>
+                        <li >
+                            <Link className={`${style.nav__link}`} href="/">Home</Link>
+                        </li>
 
-                    <li >
-                        <Link className={`${style.nav__link} `} href="#portfolio">Portfolio</Link>
-                    </li>
+                        <li >
+                            <Link className={`${style.nav__link} `} href="#portfolio">Portfolio</Link>
+                        </li>
 
-                    <li >
-                        <Link className={`${style.nav__link}`} href="#skills">Skills</Link>
-                    </li>
-                    <li >
-                        <a className={`btn`} href="#contact">Contact</a>
-                    </li>
-                    {/* <li className={style.nav__languages} >
+                        <li >
+                            <Link className={`${style.nav__link}`} href="#skills">Skills</Link>
+                        </li>
+                        <li >
+                            <a className={`btn`} href="#contact">Contact</a>
+                        </li>
+                        {/* <li className={style.nav__languages} >
                         <Link className={`${style.nav__link} `} href={router.pathname} locale={'ua'} style={{
                             fontWeight: router.locale === 'en' ? 400 : 700,
                         }}>
@@ -68,7 +69,7 @@ export default function Header({ }: Props) {
                         </Link>
                     </li> */}
 
-                    {/* {darkTheme !== undefined && (
+                        {/* {darkTheme !== undefined && (
                         <label className={style.navigationSwitch}>
                             <input
                                 className={style.switchInput}
@@ -86,27 +87,29 @@ export default function Header({ }: Props) {
                         </label>
                     )} */}
 
-                </ul>
-            </nav>
-            <nav className={`${style.nav_mobile} ${showMenu ? style.show : null}`}>
-                <div
-                    className={style.burger}
-                    onClick={() => {
-                        setShowMenu((prev) => (prev ? false : true));
-                    }}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div className={style.mobile__list}>
-                    <Link className={` ${style.mobile__link}`} onClick={() => setShowMenu(false)} href="/">Home</Link>
-                    <Link className={` ${style.mobile__link} `} onClick={() => setShowMenu(false)} href="#portfolio">Portfolio</Link>
-                    <Link className={` ${style.mobile__link} `} onClick={() => setShowMenu(false)} href="#skills">Skills</Link>
-                    <Link className={`${style.mobile__link}`} onClick={() => setShowMenu(false)} href="#contact">Contact</Link>
+                    </ul>
+                </nav>
+                <nav className={`${style.nav_mobile} ${showMenu ? style.show : null}`}>
+                    <div
+                        className={style.burger}
+                        onClick={() => {
+                            setShowMenu((prev) => (prev ? false : true));
+                        }}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div className={style.mobile__list}>
+                        <Link className={` ${style.mobile__link}`} onClick={() => setShowMenu(false)} href="/">Home</Link>
+                        <Link className={` ${style.mobile__link} `} onClick={() => setShowMenu(false)} href="#portfolio">Portfolio</Link>
+                        <Link className={` ${style.mobile__link} `} onClick={() => setShowMenu(false)} href="#skills">Skills</Link>
+                        <Link className={`${style.mobile__link}`} onClick={() => setShowMenu(false)} href="#contact">Contact</Link>
 
-                </div>
-            </nav>
+                    </div>
+                </nav>
+            </div>
+
         </header>
     )
 }
