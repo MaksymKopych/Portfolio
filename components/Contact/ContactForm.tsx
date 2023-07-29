@@ -1,50 +1,92 @@
-import React, { useState } from "react";
-import styles from "./Contact.module.scss";
-import { useForm } from "react-hook-form";
+import React, { FormEvent, useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import { sendContactForm } from "../../lib/api";
-import { FieldError } from "react-hook-form";
+import { ValidationError } from "yup";
+import styles from "./Contact.module.scss";
+import validation from "./validation";
+import extractYupErrors from "../../utils/extractYupErrors";
+
+export interface MailForm {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    offer: string;
+}
+
+const initialValue: MailForm = {
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    offer: "",
+};
 const Contact = () => {
-    const [phone, setPhone] = useState(null);
     const [isSended, setIsSended] = useState(false);
     const [sendErr, setSendErr] = useState(null);
-    const [succes, setSucces] = useState(null);
+    const [success, setSuccess] = useState(null);
+    const [form, setForm] = useState<MailForm>(initialValue);
+    const [formErrors, setFormErrors] = useState<Partial<Record<keyof MailForm, string>>>({});
 
     const showAlert = () => {
         setIsSended(true);
         setTimeout(() => {
             setIsSended(false);
+            setSendErr(null);
+            setSuccess(null);
         }, 2000);
     };
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-        reset,
-    } = useForm();
-    const resetForm = () => {
-        reset(), setPhone(null);
+
+    const handleChange = (e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.currentTarget;
+        setForm((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+        setFormErrors((prev) => ({
+            ...prev,
+            [name]: "",
+        }));
     };
-    const onSubmit = async (data) => {
-        data.phone = phone;
+
+    const sendContactForm = async (data: MailForm) =>
+        fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then((res) => {
+            if (!res.ok) throw new Error("Failed to send message");
+            return res.json();
+        });
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setFormErrors({});
+
         try {
-            const res = await sendContactForm(data);
-            if (res.message === "Email sent successfully") {
-                resetForm();
-            }
+            await validation.validate(form, { abortEarly: false });
+            const res = await sendContactForm(form);
+            console.log(res);
+            setForm(initialValue); // Clear the form data after successful submission
             showAlert();
-            setSucces(res.message);
+            setSuccess(res.message);
         } catch (error) {
-            showAlert();
-            setSendErr(error.message);
+            if (error instanceof ValidationError) {
+                const errors = extractYupErrors(error);
+                console.log(errors);
+                setFormErrors(errors);
+                showAlert();
+                setSendErr(error.message);
+            }
         }
     };
     return (
         <div id="contact" className="mb-4 container">
             {isSended && sendErr && <p className="alert error">{sendErr}</p>}
-            {isSended && !sendErr && <p className="alert success"> {succes}</p>}
+            {isSended && !sendErr && <p className="alert success"> {success}</p>}
             <p className={`section-title`}>
                 Interested ? <span>Contact Me :)</span>
             </p>
@@ -112,40 +154,34 @@ const Contact = () => {
                     </div>
 
                 </div>
-                <form className={`span-8 span-md-12 box-shadow br-15 box-shadow-md ${styles.form}`} onSubmit={handleSubmit(onSubmit)}>
+                <form className={`span-8 span-md-12 box-shadow br-15 box-shadow-md ${styles.form}`}
+                    onSubmit={handleSubmit}
+                >
                     <div className={styles.inputBox}>
                         <div className={styles.input}>
                             <input
                                 className="shadow-inset"
-                                {...register("name", {
-                                    required: "required",
-                                    minLength: {
-                                        value: 6,
-                                        message: "To Short",
-                                    },
-                                })}
+                                name="name"
                                 type="text"
                                 placeholder="Full Name"
+                                onChange={handleChange}
+                                value={form.name}
                             />
                             <p className="err">
-                                {errors?.name && <span>{(errors.name as FieldError)?.message || "error"}</span>}
+                                {formErrors?.name && <span>{formErrors.name || "error"}</span>}
                             </p>
 
                         </div>
                         <div className={styles.input}>
                             <input
-                                {...register("email", {
-                                    required: "required",
-                                    pattern: {
-                                        value: /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/,
-                                        message: "Wrong Email",
-                                    },
-                                })}
+                                name="email"
                                 type="email"
                                 placeholder="Email"
+                                onChange={handleChange}
+                                value={form.email}
                             />
                             <p className="err">
-                                {errors?.email && <span>{(errors.email as FieldError)?.message || "error"}</span>}
+                                {formErrors?.email && <span>{formErrors.email || "error"}</span>}
                             </p>
                         </div>
                     </div>
@@ -154,38 +190,45 @@ const Contact = () => {
                             <PhoneInput
                                 defaultCountry="CA"
                                 placeholder="Phone"
-                                value={phone}
-                                onChange={setPhone}
+                                value={form.phone}
+                                onChange={(e) => {
+                                    setForm((prev) => ({
+                                        ...prev,
+                                        phone: e,
+                                    }));
+                                    setFormErrors((prev) => ({
+                                        ...prev,
+                                        phone: "",
+                                    }));
+                                }}
                             />
                             <p className="err">
-                                {errors?.phone && <span>{(errors.phone as FieldError)?.message || "error"}</span>}
+                                {formErrors?.phone && <span>{formErrors.phone || "error"}</span>}
                             </p>
                         </div>
                         <div className={styles.input}>
                             <input
-                                {...register("subject", {
-                                    required: "required",
-                                })}
+                                name="subject"
                                 type="text"
                                 placeholder="Subject"
+                                onChange={handleChange}
+                                value={form.subject}
                             />
                             <p className="err">
-                                {errors?.subject && <span>{(errors.subject as FieldError)?.message || "error"}</span>}
+                                {formErrors?.subject && <span>{formErrors.subject || "error"}</span>}
                             </p>
                         </div>
                     </div>
                     <div className={`${styles.textarea}`}>
                         <textarea
-
+                            name="offer"
                             color="30"
-
                             placeholder="Your offer"
-                            {...register("offer", {
-                                required: "required",
-                            })}
+                            onChange={handleChange}
+                            value={form.offer}
                         ></textarea>
                         <p className="err">
-                            {errors?.offer && <span>{(errors.offer as FieldError)?.message || "error"}</span>}
+                            {formErrors?.offer && <span>{formErrors.offer || "error"}</span>}
                         </p>
                     </div>
 
