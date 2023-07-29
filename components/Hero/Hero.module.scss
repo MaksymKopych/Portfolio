@@ -154,7 +154,7 @@
     color: var(--color-text-main);
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
 
         @media (max-width:992px) {
             text-align: center;
@@ -175,7 +175,7 @@
 }
 
 .animate {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--color-button);
     display: flex;
     align-items: center;

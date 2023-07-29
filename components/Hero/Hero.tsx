@@ -14,7 +14,7 @@ const Hero = (props: Props) => {
                                 <span>Maksym Kopych</span>
                             </h1>
                             <div className={styles.subtitle}>
-                                <h2>And I am a</h2>
+                                {/* <h2>And I'm</h2> */}
                                 <h3 className={styles.animate}>Front-End Developer</h3>
                             </div>
                             <p className={styles.description}>
