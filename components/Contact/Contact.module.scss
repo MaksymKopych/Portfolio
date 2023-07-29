@@ -59,11 +59,18 @@
         position: absolute;
         height: 95%;
         width: 95%;
-        box-shadow: inset -5px -5px 5px rgba(197, 186, 186, 0.3), inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     }
 
     img {
         object-fit: cover;
+    }
+}
+
+.socialLink:hover {
+
+    &::before {
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.3);
     }
 }
 
