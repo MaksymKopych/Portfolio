@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { sendContactForm } from "../../lib/api";
-
+import { FieldError } from "react-hook-form";
 const Contact = () => {
     const [phone, setPhone] = useState(null);
     const [isSended, setIsSended] = useState(false);
@@ -128,8 +128,9 @@ const Contact = () => {
                                 placeholder="Full Name"
                             />
                             <p className="err">
-                                {errors?.name && <p>{errors?.name?.message || "error"}</p>}
+                                {errors?.name && <span>{(errors.name as FieldError)?.message || "error"}</span>}
                             </p>
+
                         </div>
                         <div className={styles.input}>
                             <input
@@ -144,7 +145,7 @@ const Contact = () => {
                                 placeholder="Email"
                             />
                             <p className="err">
-                                {errors?.email && <p>{errors?.email?.message || "error"}</p>}
+                                {errors?.email && <span>{(errors.email as FieldError)?.message || "error"}</span>}
                             </p>
                         </div>
                     </div>
@@ -157,7 +158,7 @@ const Contact = () => {
                                 onChange={setPhone}
                             />
                             <p className="err">
-                                {errors?.phone && <p>{errors?.phone?.message || "error"}</p>}
+                                {errors?.phone && <span>{(errors.phone as FieldError)?.message || "error"}</span>}
                             </p>
                         </div>
                         <div className={styles.input}>
@@ -169,7 +170,7 @@ const Contact = () => {
                                 placeholder="Subject"
                             />
                             <p className="err">
-                                {errors?.subject && <p>{errors?.subject?.message || "error"}</p>}
+                                {errors?.subject && <span>{(errors.subject as FieldError)?.message || "error"}</span>}
                             </p>
                         </div>
                     </div>
@@ -184,7 +185,7 @@ const Contact = () => {
                             })}
                         ></textarea>
                         <p className="err">
-                            {errors?.offer && <p>{errors?.offer?.message || "error"}</p>}
+                            {errors?.offer && <span>{(errors.offer as FieldError)?.message || "error"}</span>}
                         </p>
                     </div>
 
