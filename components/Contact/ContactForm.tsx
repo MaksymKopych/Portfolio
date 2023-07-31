@@ -90,10 +90,7 @@ const Contact = () => {
             <p className={`section-title`}>
                 Interested ? <span>Contact Me :)</span>
             </p>
-            <div className="grid"
-                style={{
-                    gap: "40px"
-                }}
+            <div className="grid gap-4"
             >
                 <div className="span-4 span-md-12 box-shadow box-shadow-md br-15 p-20">
                     <div className={`thumb ${styles.imageBox} shadow-before box-shadow-md`}>
