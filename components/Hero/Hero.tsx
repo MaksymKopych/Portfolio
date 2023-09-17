@@ -29,7 +29,7 @@ const Hero = (props: Props) => {
                         </div>
                         <div className="btn-box">
                             <a
-                                href="/MaksymKopych_FrontEndDev.pdf"
+                                href="/Maksym_Kopych_FrontenDeveloper.pdf"
                                 download
                                 className="btn"
                             >
