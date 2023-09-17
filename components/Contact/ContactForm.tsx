@@ -160,7 +160,7 @@ const Contact = () => {
                                 className="shadow-inset"
                                 name="name"
                                 type="text"
-                                placeholder="Full Name"
+                                placeholder="Full Name*"
                                 onChange={handleChange}
                                 value={form.name}
                             />
@@ -173,7 +173,7 @@ const Contact = () => {
                             <input
                                 name="email"
                                 type="email"
-                                placeholder="Email"
+                                placeholder="Email*"
                                 onChange={handleChange}
                                 value={form.email}
                             />
@@ -186,7 +186,7 @@ const Contact = () => {
                         <div className={styles.input}>
                             <PhoneInput
                                 defaultCountry="CA"
-                                placeholder="Phone"
+                                placeholder="Phone*"
                                 value={form.phone}
                                 onChange={(e) => {
                                     setForm((prev) => ({
@@ -207,7 +207,7 @@ const Contact = () => {
                             <input
                                 name="subject"
                                 type="text"
-                                placeholder="Subject"
+                                placeholder="Subject*"
                                 onChange={handleChange}
                                 value={form.subject}
                             />
@@ -220,7 +220,7 @@ const Contact = () => {
                         <textarea
                             name="offer"
                             color="30"
-                            placeholder="Your offer"
+                            placeholder="Your offer*"
                             onChange={handleChange}
                             value={form.offer}
                         ></textarea>
